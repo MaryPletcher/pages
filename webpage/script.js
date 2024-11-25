@@ -38,19 +38,26 @@ function fall(sent, y, yVelocity) {
     sent.style.top = `${y}px`;
 
     // Check if it hits the bottom of the screen
-    if (y + sent.offsetHeight >= window.innerHeight) {
+    console.log(window.innerHeight);
+    if (y + 3*sent.offsetHeight >= window.innerHeight) {
         // If it hits the bottom, apply bounce (reverse velocity and reduce it)
         yVelocity *= -bounceFactor; // Reverse the velocity and reduce it
         y = window.innerHeight - sent.offsetHeight; // Position it at the bottom
     }
 
     // Check for collision with other elements (simple overlap detection)
+    left = sent.style.left;
+    right = left + sent.offsetWidth;
     const otherElements = document.querySelectorAll('p');
     for (let other of otherElements) {
         if (other !== sent) {
-            const otherTop = parseFloat(other.style.top);
-            const otherBottom = otherTop + other.offsetHeight;
+            let otherTop = parseFloat(other.style.top);
+            let otherBottom = otherTop + other.offsetHeight;
+            let otherLeft = parseFloat(other.style.left);
+            let otherRight = otherLeft + other.offsetWidth;
             if (y + sent.offsetHeight >= otherTop && y <= otherBottom) {
+                // && 
+                // (left <= otherRight && left > otherLeft) && (right < otherRight && right > otherLeft)
                 // If the paragraph is overlapping another, reverse its velocity
                 yVelocity *= -bounceFactor;
                 y = otherTop - sent.offsetHeight; // Position it just above the other element
@@ -60,19 +67,11 @@ function fall(sent, y, yVelocity) {
     }
 
     // If the element's velocity is too small, stop the animation
-    if ( Math.abs(yVelocity) < speed && y + sent.offsetHeight >= window.innerHeight) {
-        console.log(`Element ${element.id} stopped.`);
+    if (Math.abs(yVelocity) < speed && y + sent.offsetHeight >= window.innerHeight) {
+        console.log(`Element ${sent.id} stopped.`);
     } else {
         requestAnimationFrame(() => fall(sent, y, yVelocity)); // Continue the animation
     }
 
-    // // Reset if it goes off the screen
-    // if (y > window.innerHeight -50) {
-    //     //y = -50; // Reset to above the screen
-    //     //bounce and stop
-    // }
-    // else {
-    //     requestAnimationFrame(function() { fall(sent, y); }); 
-    // }
 
 }
