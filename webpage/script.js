@@ -134,7 +134,8 @@ function getHighlight() {
         "#FD9A27",
         "#FD1BA6",
         "#22C6FD",
-        "#A1FD29"
+        "#A1FD29",
+        "#FDFD38"
       ];
     const randomLine = lines[Math.floor(Math.random() * lines.length)];
     return randomLine;
