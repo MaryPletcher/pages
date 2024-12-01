@@ -23,6 +23,7 @@ function create() {
     console.log(para);
     para.style.top = `${yPosition}px`;
     para.style.left = `${Math.random() * window.innerWidth}px`; 
+    para.style.rotate = `${Math.floor(Math.random() * 11) - 5}deg`;
     fall(para, yPosition, yVelocity);
 }
 
@@ -36,6 +37,7 @@ function fall(sent, y, yVelocity) {
     
     // Update the paragraph's position
     sent.style.top = `${y}px`;
+    
 
     // Check if it hits the bottom of the screen
     console.log(window.innerHeight);
