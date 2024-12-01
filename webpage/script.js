@@ -1,5 +1,4 @@
 
-
 let mainButton = document.getElementById("mainButton");
 mainButton.onclick = function(){create()};
 
@@ -8,7 +7,7 @@ mainButton.onclick = function(){create()};
 const gravity = 0.1; // Acceleration due to gravity
 const bounceFactor = 0.1; // Bounce energy loss
 let numSentances = 0;
-
+console.log(getStatement("thesomethingelse.txt"));
 
 function create() {
     let yPosition = -50;
@@ -17,13 +16,13 @@ function create() {
     id = numSentances.toString();
     const para = document.createElement("p");
     para.id = id;
-    para.innerText = "(the something else was probably important)";
+    para.innerText = getStatement("thesomethingelse.txt");
     para.style.position = "absolute";
     document.body.appendChild(para);
     console.log(para);
     para.style.top = `${yPosition}px`;
     para.style.left = `${Math.random() * window.innerWidth}px`; 
-    para.style.rotate = `${Math.floor(Math.random() * 11) - 5}deg`;
+    para.style.rotate = `${Math.floor(Math.random() * 7) - 3}deg`;
     fall(para, yPosition, yVelocity);
 }
 
@@ -77,3 +76,48 @@ function fall(sent, y, yVelocity) {
 
 
 }
+
+function getStatement(fileName) {
+    const lines = [
+        "(the something else was working on my love life)",
+        "(the something else was probably important)",
+        "(the something else was cleaning my apartment)",
+        "(the something else was finishing the lego kit i got a year ago)",
+        "(the something else was opening a savings account)",
+        "(the something else was learning to play the piano)",
+        "(the something else was learning a new language)",
+        "(the something else was getting out of bed)",
+        "(the something else was getting a new job)",
+        "(the something else was making breakfast)",
+        "(the something else was buying christmas gifts)",
+        "(the something else was exercising)",
+        "(the something else was being a normal functioning human)",
+        "(the something else was finishing that book)",
+        "(the something else was reaching out to my friends)",
+        "(the something else was writing)",
+        "(the something else was meditating)",
+        "(the something else was texting my mom)",
+        "(the something else was finishing my crochet project)",
+        "(the something else was calling my grandparents)",
+        "(the something else was texting my sisters)",
+        "(the something else was learning javascript)",
+        "(the something else was going outside)",
+        "(the something else was watching stupid internet videos)",
+        "(the something else was planning a trip abroad)",
+        "(the something else was camping)",
+        "(the something else was learning how to make perfect macarons)",
+        "(the something else was getting a haircut)",
+        "(the something else was getting a cat)",
+        "(the something else was learning about philosphy)",
+        "(the something else was probably important)",
+        "(the something else was probably important)",
+        "(the something else was probably important)",
+        "(the something else was probably important)",
+        "(the something else was probably important)",
+      ];
+      
+      // Pick a random line
+      const randomLine = lines[Math.floor(Math.random() * lines.length)];
+      console.log(randomLine);
+      return randomLine;
+} 
