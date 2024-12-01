@@ -1,28 +1,53 @@
 body {
     margin: 0;
     height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    
     font-family: Arial, sans-serif;
     background-color: white;
 }
 
-
+.button {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0;
+    height: 85vh; /* Full viewport height */
+}
 #mainButton {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 24px;
     background-color: black;
-    border: none;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
+    border-width: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    
 }
 p {
-    outline: black;
+    outline: 2px solid black;
+    outline-offset: 5px;
+    border-radius: 5px; 
     white-space:nowrap;
-    background-color: pink;
+    /* background-color: rgb(204, 85, 255); */
+    
     rotate: 2deg;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    flex: 1;
+    margin: 15px;
+    padding-left: 30px;
+    color: black;
+    
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: lighter;
 }

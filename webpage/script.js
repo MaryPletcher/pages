@@ -7,7 +7,7 @@ mainButton.onclick = function(){create()};
 const gravity = 0.1; // Acceleration due to gravity
 const bounceFactor = 0.1; // Bounce energy loss
 let numSentances = 0;
-console.log(getStatement("thesomethingelse.txt"));
+console.log(getStatement());
 
 function create() {
     let yPosition = -50;
@@ -23,6 +23,8 @@ function create() {
     para.style.top = `${yPosition}px`;
     para.style.left = `${Math.random() * window.innerWidth}px`; 
     para.style.rotate = `${Math.floor(Math.random() * 7) - 3}deg`;
+    highlight = getHighlight();
+    para.style.backgroundColor = highlight;
     fall(para, yPosition, yVelocity);
 }
 
@@ -77,7 +79,7 @@ function fall(sent, y, yVelocity) {
 
 }
 
-function getStatement(fileName) {
+function getStatement() {
     const lines = [
         "(the something else was working on my love life)",
         "(the something else was probably important)",
@@ -118,6 +120,16 @@ function getStatement(fileName) {
       
       // Pick a random line
       const randomLine = lines[Math.floor(Math.random() * lines.length)];
-      console.log(randomLine);
       return randomLine;
-} 
+}
+
+function getHighlight() {
+    const lines = [
+        "#FD9A27",
+        "#FD1BA6",
+        "#22C6FD",
+        "#A1FD29"
+      ];
+    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+    return randomLine;
+}
