@@ -1,6 +1,11 @@
 
 let mainButton = document.getElementById("mainButton");
-mainButton.onclick = function(){create()};
+var audio = new Audio('happy-positive-energic-jazz-243719.mp3');
+mainButton.onclick = function(){
+    audio.play();
+    create()
+
+};
 
  // Start slightly above the screen
 
@@ -81,42 +86,43 @@ function fall(sent, y, yVelocity) {
 
 function getStatement() {
     const lines = [
-        "(the something else was working on my love life)",
-        "(the something else was probably important)",
-        "(the something else was cleaning my apartment)",
-        "(the something else was finishing the lego kit i got a year ago)",
-        "(the something else was opening a savings account)",
-        "(the something else was learning to play the piano)",
-        "(the something else was learning a new language)",
-        "(the something else was getting out of bed)",
-        "(the something else was getting a new job)",
-        "(the something else was making breakfast)",
-        "(the something else was buying christmas gifts)",
-        "(the something else was exercising)",
-        "(the something else was being a normal functioning human)",
-        "(the something else was finishing that book)",
-        "(the something else was reaching out to my friends)",
-        "(the something else was writing)",
-        "(the something else was meditating)",
-        "(the something else was texting my mom)",
-        "(the something else was finishing my crochet project)",
-        "(the something else was calling my grandparents)",
-        "(the something else was texting my sisters)",
-        "(the something else was learning javascript)",
-        "(the something else was going outside)",
-        "(the something else was watching stupid internet videos)",
-        "(the something else was planning a trip abroad)",
-        "(the something else was camping)",
-        "(the something else was learning how to make perfect macarons)",
-        "(the something else was getting a haircut)",
-        "(the something else was getting a cat)",
-        "(the something else was learning about philosphy)",
-        "(the something else was probably important)",
-        "(the something else was probably important)",
-        "(the something else was probably important)",
-        "(the something else was probably important)",
-        "(the something else was probably important)",
+        " (the something else was working on my love life) ",
+        " (the something else was probably important) ",
+        " (the something else was cleaning my apartment) ",
+        " (the something else was finishing the lego kit i got a year ago) ",
+        " (the something else was opening a savings account) ",
+        " (the something else was learning to play the piano) ",
+        " (the something else was learning a new language) ",
+        " (the something else was getting out of bed) ",
+        " (the something else was getting a new job) ",
+        " (the something else was making breakfast) ",
+        " (the something else was buying christmas gifts) ",
+        " (the something else was exercising) ",
+        " (the something else was being a normal functioning human) ",
+        " (the something else was finishing that book) ",
+        " (the something else was reaching out to my friends) ",
+        " (the something else was writing) ",
+        " (the something else was meditating) ",
+        " (the something else was texting my mom) ",
+        " (the something else was finishing my crochet project) ",
+        " (the something else was calling my grandparents) ",
+        " (the something else was texting my sisters) ",
+        " (the something else was learning javascript) ",
+        " (the something else was going outside) ",
+        " (the something else was watching stupid internet videos) ",
+        " (the something else was planning a trip abroad) ",
+        " (the something else was camping) ",
+        " (the something else was learning how to make perfect macarons) ",
+        " (the something else was getting a haircut) ",
+        " (the something else was getting a cat) ",
+        " (the something else was learning about philosphy) ",
+        " (the something else was probably important) ",
+        " (the something else was probably important) ",
+        " (the something else was probably important) ",
+        " (the something else was probably important) ",
+        " (the something else was probably important) "
       ];
+      
       
       // Pick a random line
       const randomLine = lines[Math.floor(Math.random() * lines.length)];
