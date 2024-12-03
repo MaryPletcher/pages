@@ -26,7 +26,7 @@ function create() {
     document.body.appendChild(para);
     console.log(para);
     para.style.top = `${yPosition}px`;
-    para.style.left = `${Math.random() * window.innerWidth}px`; 
+    para.style.left = `${Math.random() * (window.innerWidth-150)}px`; 
     para.style.rotate = `${Math.floor(Math.random() * 7) - 3}deg`;
     highlight = getHighlight();
     para.style.backgroundColor = highlight;
