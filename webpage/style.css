@@ -4,6 +4,12 @@ body {
     
     font-family: Arial, sans-serif;
     background-color: white;
+    max-width: 100%; /* Ensures the text doesn't exceed the page width */
+    overflow-wrap: break-word; /* Breaks long words to prevent overflow */
+    word-wrap: break-word; /* Older compatibility for breaking words */
+    white-space: normal; /* Ensures text wraps to the next line */
+    box-sizing: border-box; /* Includes padding in width calculation */
+
 }
 
 .button {
@@ -29,10 +35,10 @@ p {
     outline: 2px solid black;
     outline-offset: 5px;
     border-radius: 5px; 
-    white-space:nowrap;
+    /* white-space:nowrap; */
     /* background-color: rgb(204, 85, 255); */
-    
-    
+    text-align: center; /* Centers the text horizontally */
+
     rotate: 2deg;
 }
 
