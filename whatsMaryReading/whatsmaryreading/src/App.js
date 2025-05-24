@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Papa from "papaparse";
 
 //hooks
-
 //https://pypi.org/project/storygraph-api/
 
 //reading storygraph output
@@ -34,9 +33,23 @@ const CsvReader = () => {
       });
   }, []);
 
+
+
+  
+  function Book() {
+    return (
+      <div>
+        <p>title</p>
+        <p>author</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1>What's Mary Reading?</h1>
+      <Book />
+      <Book />
       <ul>
         {csvData.map((row, index) => (
           <li key={index}>{JSON.stringify(row)}</li>
@@ -47,6 +60,5 @@ const CsvReader = () => {
 };
 
 export default CsvReader;
-
 
 
